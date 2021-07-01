@@ -13,7 +13,7 @@ class AuthContoller {
   }
 
   async updatePassword(req, res) {
-    const result = await AuthServ.updatePassword(req.params.userId, req.body);
+    const result = await AuthServ.updatePassword(req.params.user_id, req.body);
     res.status(200).send(response("Password updated", result));
   }
 

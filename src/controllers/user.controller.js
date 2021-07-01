@@ -13,17 +13,17 @@ class UserContoller {
   }
 
   async getOne(req, res) {
-    const result = await UserServ.getOne(req.params.userId);
+    const result = await UserServ.getOne(req.params.user_id);
     res.status(200).send(response("User data", result));
   }
 
   async update(req, res) {
-    const result = await UserServ.update(req.params.userId, req.body);
+    const result = await UserServ.update(req.params.user_id, req.body);
     res.status(200).send(response("User updated", result));
   }
 
   async delete(req, res) {
-    const result = await UserServ.delete(req.params.userId);
+    const result = await UserServ.delete(req.params.user_id);
     res.status(200).send(response("User deleted", result));
   }
 }

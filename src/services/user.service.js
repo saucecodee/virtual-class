@@ -9,9 +9,9 @@ class UserService {
     return await User.find({}, { password: 0, __v: 0 });
   }
 
-  async getOne(userId) {
+  async getOne(user_id) {
     const user = await User.findOne(
-      { _id: userId },
+      { _id: user_id },
       { password: 0, __v: 0 }
     );
     if (!user) throw new CustomError("User does not exist");
@@ -19,9 +19,9 @@ class UserService {
     return user
   }
 
-  async update(userId, data) {
+  async update(user_id, data) {
     const user = await User.findByIdAndUpdate(
-      { _id: userId },
+      { _id: user_id },
       { $set: data },
       { new: true }
     );
@@ -31,8 +31,8 @@ class UserService {
     return user;
   }
 
-  async delete(userId) {
-    const user = await User.findOne({ _id: userId });
+  async delete(user_id) {
+    const user = await User.findOne({ _id: user_id });
     user.remove()
     return user
   }

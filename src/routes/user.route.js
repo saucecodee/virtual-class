@@ -6,9 +6,9 @@ const { role } = require("./../config")
 
 router.post("/", auth(role.ADMIN), upload("image"), UserCtrl.create);
 router.get("/", auth(role.USER), UserCtrl.getAll);
-router.get("/:userId", auth(role.USER), UserCtrl.getOne);
-router.put("/:userId", auth(role.USER), upload("image"), UserCtrl.update);
-router.delete("/:userId", auth(role.USER), UserCtrl.delete);
+router.get("/:user_id", auth(role.USER), UserCtrl.getOne);
+router.put("/:user_id", auth(role.USER), UserCtrl.update);
+router.delete("/:user_id", auth(role.USER), UserCtrl.delete);
 
 
 module.exports = router

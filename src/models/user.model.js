@@ -19,27 +19,23 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-    },
-    image: {
-      type: String,
+      required: [true, "Email is required"],
     },
     role: {
       type: String,
       trim: true,
-      enum: ["user", "admin"],
-      default: "user"
+      enum: ["ADMIN", "STUDENT", "TUTOR"]
     },
-    isActive: {
+    is_active: {
       type: Boolean,
       default: true,
-    },
-    isVerified: {
-      type: Boolean,
-      default: false,
     }
   },
   {
-    timestamps: true
+    timestamps: {
+      createdAt: 'created_at',
+      updatedAt: 'updated_at'
+    }
   }
 );
 

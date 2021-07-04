@@ -6,6 +6,9 @@ const { APP_PORT } = require("./src/config")
 // Pre-route middlewares
 require("./src/middlewares/pre-route.middleware")(app);
 
+// View routes
+app.use("/", require("./src/routes/web-view"));
+
 // API routes
 app.use("/api", require("./src/routes"));
 

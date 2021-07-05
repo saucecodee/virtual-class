@@ -10,16 +10,28 @@
 
   <main>
     <form class="auth-form" action="">
-      <div class="form-control">
-        <input type="text" name="email" placeholder="Enter your email here">
+      <h3 class="from-title">Create an account</h3>
+      <div class="fm-control">
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email" placeholder="Enter your email here">
       </div>
-      <div class="form-control">
-        <input type="password" name="password" placeholder="Enter your password here">
+      <div class="fm-control">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="Enter your password here">
       </div>
-      <div class="form-control">
-        <input type="text" name="name" placeholder="Enter your name here">
+      <div class="fm-control">
+        <label for="name">Full name</label>
+        <input id="name" type="text" name="name" placeholder="Enter your name here">
       </div>
-      <button id="buy-bnbc" class="color-1">Buy</button><br>
+
+      <div class="fm-control">
+        <label for="role">Sign up as</label>
+        <select id="role" name="role">
+          <option value="student">Student</option>
+          <option value="tutor">Tutor</option>
+        </select>
+      </div>
+      <button>Sign up</button><br>
     </form>
   </main>
 

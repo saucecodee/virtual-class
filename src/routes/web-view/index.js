@@ -13,32 +13,30 @@ router.get("/sign-in", (req, res) => {
   res.render("pages/sign-in")
 });
 
-// Tutor dashboard
-router.get("/tutor/dashboard", (req, res) => {
-  res.render("pages/tutor/dashboard")
+router.get("/lectures/:lecture_id/watch", (req, res) => {
+  res.render("pages/watch")
 });
 
-router.get("/tutor/classes", (req, res) => {
-  res.render("pages/tutor/classes")
+router.get("/dashboard", (req, res) => {
+  res.render("pages/dashboard")
 });
 
-router.get("/tutor/lectures", (req, res) => {
-  res.render("pages/tutor/lectures")
+router.get("/classes", (req, res) => {
+  res.render("pages/classes")
 });
 
-router.get("/tutor/students", (req, res) => {
-  res.render("pages/tutor/students")
+router.get("/lectures", (req, res) => {
+  res.render("pages/lectures")
 });
 
-router.get("/tutor/profile", (req, res) => {
-  res.render("pages/tutor/profile")
+router.get("/students", (req, res) => {
+  res.render("pages/students")
 });
 
-
-// Student dashboard
-router.get("/student/dashboard", (req, res) => {
-  res.render("pages/student/dashboard")
+router.get("/profile", (req, res) => {
+  res.render("pages/profile")
 });
+
 
 
 

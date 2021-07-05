@@ -2,22 +2,24 @@
 <html lang="en">
 
 <head>
-  <%- include('../../partials/head'); %>
+  <%- include('../partials/head'); %>
 </head>
 
 <body>
 
   <header>
-    <%- include('../../partials/header'); %>
+    <%- include('../partials/header'); %>
   </header>
 
   <div class="container-fluid dash-container">
     <div class="row">
-      <%- include('../../partials/dashboard-sidebar'); %>
+      <%- include('../partials/dashboard-sidebar'); %>
 
         <main id="dash-main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
-          <h2 class="dash-main-title">Welcome Ifedili</h2>
+          <div class="dash-main-cont">
+            <h2 class="dash-main-title"><span>Welcome</span> Ifedili</h2>
+          </div>
 
           <div class="row info-board">
             <div class="col-md-6 grid-margin stretch-card">
@@ -33,11 +35,11 @@
                 </div>
 
                 <div>
-                  <div>
-                    <div>Start at: 10:30pm</div>
-                    <div>Ends at: 12:30pm</div>
-                    <div>Course: MAT 101</div>
-                    <div>Tutor: Mr. Okoye Jay</div>
+                  <div class="today-meta">
+                    <div><b>Starts at:</b> 10:30pm</div>
+                    <div><b>Ends at:</b> 12:30pm</div>
+                    <div><b>Course:</b> MAT 101</div>
+                    <div><b>Tutor:</b> Mr. Okoye Jay</div>
                   </div>
                 </div>
               </div>

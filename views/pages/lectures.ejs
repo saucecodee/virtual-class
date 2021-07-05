@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body>
+
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
+
+  <div class="container-fluid dash-container">
+    <div class="row">
+      <%- include('../partials/dashboard-sidebar'); %>
+
+        <main id="dash-main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+          <div class="dash-main-cont">
+            <h2 class="dash-main-title">Lectures</h2>
+            <button>Create Lecture</button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Topic</th>
+                <th>Class</th>
+                <th>Tutor</th>
+                <th>Time</th>
+                <th>status</th>
+                <th>Attendance</th>
+                <th width="80"></th>
+                <th width="80"></th>
+                <th width="90"></th>
+              </tr>
+            </thead>
+            <tbody id="admins-table">
+              <tr>
+                <td>{{Topic}}</td>
+                <td>{{Class}}</td>
+                <td>{{Tutor}}</td>
+                <td>{{Time}}</td>
+                <td>{{status}}</td>
+                <td>{{Attendance}}</td>
+                <td><button>Join</button></td>
+                <td><button>View</button></td>
+                <td><button>Delete</button></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </main>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

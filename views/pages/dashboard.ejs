@@ -8,7 +8,7 @@
 <body>
 
   <header>
-    <%- include('../partials/header'); %>
+    <%- include('../partials/header', {user}); %>
   </header>
 
   <div class="container-fluid dash-container">
@@ -18,7 +18,9 @@
         <main id="dash-main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
           <div class="dash-main-cont">
-            <h2 class="dash-main-title"><span>Welcome</span> Ifedili</h2>
+            <h2 class="dash-main-title"><span>Welcome</span>
+              <%= user.name %>
+            </h2>
           </div>
 
           <div class="row info-board">

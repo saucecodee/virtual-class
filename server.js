@@ -1,10 +1,16 @@
 require("express-async-errors");
 const app = require("express")();
+const http = require('http');
+const server = http.createServer(app);
+const sockets = require("./src/sockets")
 const { APP_PORT } = require("./src/config")
 
+// Sockets
+sockets(server)
 
 // Pre-route middlewares
 require("./src/middlewares/pre-route.middleware")(app);
+
 
 // View routes
 app.use("/", require("./src/routes/web-view"));

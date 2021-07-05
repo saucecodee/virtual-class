@@ -16,16 +16,31 @@
       <%- include('../partials/dashboard-sidebar'); %>
 
         <main id="dash-main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="stream-cont">
-              <div id="video"></div>
-              div.
+          <div class="stream-cont">
+            <div id="video"></div>
+            <div class="" id="chat">
+              <div class="chat-header">
+                <h4>Chat</h4>
+              </div>
+              <div class="chat-body"></div>
+              <div class="chat-footer">
+                <form class="message-form">
+                  <input placeholder="Send a message" type="text" id="message" class="message-input" autofocus>
+                  <button class="submit-btn">SEND</button>
+                </form>
+              </div>
             </div>
+          </div>
         </main>
 
     </div>
   </div>
 
   <%- include("../partials/dashboard-scripts"); %>
+  <!-- <script defer src="http://localhost:5000/socket.io/socket.io.js"></script> -->
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script defer src="https://virj-chat.herokuapp.com/socket.io/socket.io.js"></script>
+  <script defer src="http://localhost:5000/scripts/chat.js"></script>
 
 </body>
 

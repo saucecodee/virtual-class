@@ -19,11 +19,14 @@
         </a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" id="nav-students" href="/students">
-          <span class="menu-title">Students</span>
-        </a>
-      </li>
+      <% if(user.role == "TUTOR"){ %>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-students" href="/students">
+            <span class="menu-title">Students</span>
+          </a>
+        </li>
+      <% }  %> 
+      
 
       <li class="nav-item">
         <a class="nav-link" id="nav-profile" href="/profile">

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body>
+
+  <header>
+    <%- include('../partials/header', {user}); %>
+  </header>
+
+  <div class="container-fluid dash-container">
+    <div class="row">
+      <%- include('../partials/dashboard-sidebar', {user}); %>
+
+        <main id="dash-main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+          <div class="dash-main-cont">
+            <% if(mode== "create"){ %>
+              <h2 class="dash-main-title">Create class</h2>
+          <% } else{ %>  
+            <h2 class="dash-main-title">View class</h2>
+            <% } %>
+            
+          </div>
+
+          <form class="profile-form" action="">
+            <div class="fm-control">
+              <label for="name">Title</label>
+              <input id="title" type="text" name="title" placeholder="Enter class title">
+            </div>
+            <div class="fm-control">
+              <label for="description">Description</label>
+              <input id="description" type="text" name="description" placeholder="Enter your description here">
+            </div>
+            <br>
+
+            <div class="dash-main-cont">
+              <% if(mode== "create"){ %>
+                <button>Create class</button><br>
+            <% } else{ %>  
+                <button>Update class</button><br>
+              <% } %>
+
+          </form>
+        </main>
+
+    </div>
+  </div>
+
+  <%- include("../partials/dashboard-scripts"); %>
+
+</body>
+
+</html>

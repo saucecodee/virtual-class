@@ -8,12 +8,12 @@
 <body>
 
   <header>
-    <%- include('../partials/header'); %>
+    <%- include('../partials/header', {user}); %>
   </header>
 
   <div class="container-fluid dash-container">
     <div class="row">
-      <%- include('../partials/dashboard-sidebar'); %>
+      <%- include('../partials/dashboard-sidebar', {user}); %>
 
         <main id="dash-main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
@@ -32,22 +32,19 @@
                 <th>status</th>
                 <th>Attendance</th>
                 <th width="80"></th>
-                <th width="80"></th>
-                <th width="90"></th>
               </tr>
             </thead>
             <tbody id="admins-table">
-              <tr>
-                <td>{{Topic}}</td>
-                <td>{{Class}}</td>
-                <td>{{Tutor}}</td>
-                <td>{{Time}}</td>
-                <td>{{status}}</td>
-                <td>{{Attendance}}</td>
-                <td><button>Join</button></td>
-                <td><button>View</button></td>
-                <td><button>Delete</button></td>
-              </tr>
+                <tr>
+                  <td>Introduction to Pysics</td>
+                  <td>MEC 452</td>
+                  <td>Onyegbu Ifedili</td>
+                  <td>12:00:45 pm</td>
+                  <td>Ongoing</td>
+                  <td>0/1</td>
+                  <td> <a href="/lectures/dgfiugsigdsi73267632/watch"><button>Join</button></a></td>
+
+                </tr>
 
             </tbody>
           </table>

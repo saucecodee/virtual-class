@@ -19,6 +19,10 @@ const studentSchema = new Schema(
       ref: 'users',
       required: true
     },
+    attendance: {
+      type: Number,
+      default: 0
+    },
     status: {
       type: String,
       trim: true,

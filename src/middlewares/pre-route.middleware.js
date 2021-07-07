@@ -13,6 +13,7 @@ module.exports = (app) => {
   app.use(session({
     secret: 'XXXX-XXXX-XXXX',
     store: new redisStore({ host: 'localhost', port: 6379, client: client, ttl: 260 }),
+    cookie: {expires: new Date(Date.now() + (30 * 86400 * 1000))},
     saveUninitialized: false,
     resave: false
   }));

@@ -16,11 +16,18 @@ const classSchema = new Schema(
     description: {
       type: String,
     },
+    code: {
+      type: String,
+    },
     no_of_students: {
       type: Number,
       default: 0
     },
     no_of_lectures: {
+      type: Number,
+      default: 0
+    },
+    lectures_done: {
       type: Number,
       default: 0
     },

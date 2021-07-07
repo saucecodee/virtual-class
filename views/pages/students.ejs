@@ -8,12 +8,12 @@
 <body>
 
   <header>
-    <%- include('../partials/header'); %>
+    <%- include('../partials/header', {user}); %>
   </header>
 
   <div class="container-fluid dash-container">
     <div class="row">
-      <%- include('../partials/dashboard-sidebar'); %>
+      <%- include('../partials/dashboard-sidebar', {user}); %>
 
         <main id="dash-main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
@@ -35,10 +35,10 @@
             </thead>
             <tbody id="admins-table">
               <tr>
-                <td>{{Student}}</td>
-                <td>{{Class}}</td>
-                <td>{{Status}}</td>
-                <td>{{Attendance}}</td>
+                <td>John Oke</td>
+                <td>MEC 241</td>
+                <td>active</td>
+                <td>0/0</td>
                 <td><button>View</button></td>
                 <td><button>Remove</button></td>
               </tr>

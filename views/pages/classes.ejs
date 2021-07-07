@@ -8,50 +8,56 @@
 <body>
 
   <header>
-    <%- include('../partials/header'); %>
+    <%- include('../partials/header', {user}); %>
   </header>
 
   <div class="container-fluid dash-container">
     <div class="row">
-      <%- include('../partials/dashboard-sidebar'); %>
+      <%- include('../partials/dashboard-sidebar', {user}); %>
 
         <main id="dash-main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
           <div class="dash-main-cont">
             <h2 class="dash-main-title">Classes</h2>
-            <button>Create class</button>
+            <% if(user.role == "TUTOR"){ %>
+                <a href="/classes/create"><button>Create class</button></a>
+            <% } else{ %>  
+                <button>Join class</button>
+              <% } %>
           </div>
 
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Tutor</th>
-                <th>Students</th>
-                <th>Lectures</th>
-                <th width="80"></th>
-                <th width="90"></th>
-              </tr>
-            </thead>
-            <tbody id="admins-table">
-              <tr>
-                <td>{{Name}}</td>
-                <td>{{Tutor}}</td>
-                <td>{{Students}}</td>
-                <td>{{Lectures}}</td>
-                <td><button>View</button></td>
-                <td><button>Delete</button></td>
-              </tr>
-              <tr>
-                <td>{{Name}}</td>
-                <td>{{Tutor}}</td>
-                <td>{{Students}}</td>
-                <td>{{Lectures}}</td>
-                <td><button>View</button></td>
-                <td><button>Delete</button></td>
-              </tr>
-            </tbody>
-          </table>
+          <% if(data.length > 0){ %>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Tutor</th>
+                    <th>Students</th>
+                    <th>Lectures</th>
+                    <th>Code</th>
+                    <th width="80"></th>
+                    <th width="90"></th>
+                  </tr>
+                </thead>
+                <tbody id="admins-table">
+                  <% data.forEach(function(classs) { %>
+                    <tr>
+                      <td><%= classs.title %></td>
+                      <td><%= classs.tutor %></td>
+                      <td><%= classs.students %></td>
+                      <td><%= classs.lectures %></td>
+                      <td><%= classs.code %></td>
+                      <td> <a href="/classes/<%= classs._id %>"><button>View</button></a></td>
+                      <td><button>Delete</button></td>
+                    </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+          <% } else{ %>  
+              <div class="empty">
+                <h2>You have no classes yet</h2>
+              </div>
+          <% } %>
         </main>
 
     </div>
